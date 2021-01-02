@@ -9,9 +9,11 @@ class Courses():
 
     def __init__(self):
         self.all_courses = {'Mathematics': [],
-                            'Informatics': [], 'Physics': []}
+                            'Informatics': [],
+                            'Physics': []
+                            }
 
-    def set_students_courses(self, *students_lists: Student) -> bool:
+    def set_students_courses(self, *students_lists):
         for index, student_list in enumerate(students_lists):
             for student in student_list:
                 if isinstance(student, Student):
@@ -24,4 +26,5 @@ class Courses():
 
     def print_students_courses(self):
         for key in self.all_courses:
-            print(f'{key} : {[str(student) for student in self.all_courses[key]]}')
+            print(
+                f'{key} : {[str(student) for student in self.all_courses[key]]}')
